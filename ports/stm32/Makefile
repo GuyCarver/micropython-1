@@ -322,6 +322,15 @@ SRC_MOD += $(addprefix $(CC3000_DIR)/src/,\
 	)
 endif
 
+#GUY: Added my stuff.
+CFLAGS += -DMICROPY_PY_TFT=1
+SRC_C += ST7735.c
+CFLAGS += -DMICROPY_PY_MPU6050=0
+SRC_C += mpu6050.c
+CFLAGS += -DMICROPY_PY_OLED=1
+SRC_C += oled.c
+#GUY: END
+
 OBJ =
 OBJ += $(PY_O)
 OBJ += $(addprefix $(BUILD)/, $(SRC_LIB:.c=.o))

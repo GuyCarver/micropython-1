@@ -1,0 +1,43 @@
+My notes on building MicroPython for PC/PyBoard
+
+The PyBoard build in in ports/stm32
+The PC build is in ports/windows
+Windows is easy.  Just load the .vcxproj and build in VS2015.
+
+For PyBoard it was more difficult.
+Using the ubuntu bash that comes with Windows 10.  It's betaversion only but working well.
+Installed all the stuff I needed with the following commands.
+
+[[http://work.eswarprakash.com/2016/12/10/cross-compiling-for-raspberry-pi-in-windows-10/ ]]
+
+$ sudo apt-get install build-essential cmake pkg-config
+$ sudo apt-get install python2.7-dev python3-dev
+$ wget https://bootstrap.pypa.io/get-pip.py
+$ sudo python get-pip.py
+$ sudo apt-get install gcc-arm-linux-gnueabi
+$ sudo apt-get install gcc-arm-linux-gnueabihf
+
+//From MicroPython root.
+The MicroPython root is at D:/Projects/MicroPython
+ubunto sees this in /mnt/d/Projects/MicroPython
+cd to //mnt/d/Projects/MicroPython/ports/stm32
+$ make -C mpy-cross
+$ git submodule update --init
+$ cd ports/stm32
+$ make
+
+ST7735:
+Added ST7735.c to the makefile with;
+  CFLAGS += -DMICROPY_PY_TFT=1
+  SRC_C += ST7735.c
+Was getting a syntax error trying to compile .mpy files from .py files.  This was because symlinks don't work.  So the stm32/modules directory has files that are actually symlinks to other files.  To fix the issue copy the actual other files from their original locations into the modules directory.
+
+Putty:
+* Connect with COM? (Have to look it up in devices)
+* Serial with settings of 115200 8N1
+* For DFU update, from command prompt I type pyb.bootloader()
+
+Downloaded the DFUUtil from here [[http://www.st.com/en/development-tools/stsw-stm32080.html]]
+
+This allows you to select the .dfu and run it.
+

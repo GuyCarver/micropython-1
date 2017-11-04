@@ -56,6 +56,10 @@
 #include "servo.h"
 #include "dac.h"
 #include "lcd.h"
+//GUY: Added st7735
+#include "ST7735.h"
+#include "oled.h"
+//GUY: END.
 #include "usb.h"
 #include "portmodules.h"
 #include "modmachine.h"
@@ -224,6 +228,11 @@ STATIC const mp_rom_map_elem_t pyb_module_globals_table[] = {
 #if MICROPY_HW_HAS_LCD
     { MP_ROM_QSTR(MP_QSTR_LCD), MP_ROM_PTR(&pyb_lcd_type) },
 #endif
+//GUY: Added ST7735
+    { MP_OBJ_NEW_QSTR(MP_QSTR_TFT), (mp_obj_t)&pyb_tft_type },
+//GUY: Added OLED
+    { MP_OBJ_NEW_QSTR(MP_QSTR_oled), (mp_obj_t)&pyb_oled_type },
+//GUY: END.
 };
 
 STATIC MP_DEFINE_CONST_DICT(pyb_module_globals, pyb_module_globals_table);

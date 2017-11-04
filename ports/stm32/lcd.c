@@ -36,8 +36,12 @@
 #include "genhdr/pins.h"
 #include "bufhelper.h"
 #include "spi.h"
-#include "font_petme128_8x8.h"
+//GUY: Made this external ref.
+//#include "font_petme128_8x8.h"
 #include "lcd.h"
+
+extern const uint8_t font_petme128_8x8[];
+//GUY: END
 
 /// \moduleref pyb
 /// \class LCD - LCD control for the LCD touch-sensor pyskin

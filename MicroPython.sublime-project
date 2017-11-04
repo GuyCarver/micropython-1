@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "f:"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "C:\\Users\\gcarver\\OneDrive\\Projects\\micropython-1"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "C:\\Users\\gcarver\\OneDrive\\Projects\\MicroPython"
+		}
+	]
+}

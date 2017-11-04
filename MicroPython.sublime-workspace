@@ -1,0 +1,1193 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"DIA",
+				"DIAGRIGHT"
+			],
+			[
+				"_I",
+				"_I2C_ADDRESS"
+			],
+			[
+				"MP_ROM",
+				"MP_ROM_PTR"
+			],
+			[
+				"MP_R",
+				"MP_ROM_INT"
+			],
+			[
+				"MP_OBJ_NEW",
+				"mp_obj_new_int"
+			],
+			[
+				"OLED",
+				"OLED_ADDRESS"
+			],
+			[
+				"if",
+				"if\tIf Condition"
+			],
+			[
+				"SPI",
+				"SPIfd"
+			],
+			[
+				"siz",
+				"size_t"
+			],
+			[
+				"mp_ha",
+				"mp_hal_pin_low"
+			],
+			[
+				"mp_hal",
+				"mp_hal_pin_high"
+			],
+			[
+				"mp_obj",
+				"mp_obj_t"
+			],
+			[
+				"G",
+				"GCONFIG_FS_SEL_LENGTH"
+			],
+			[
+				"GCON",
+				"GCONFIG_FS_SEL_BIT"
+			],
+			[
+				"mpob",
+				"mp_obj_new_int"
+			],
+			[
+				"pyb_mpu",
+				"pyb_mpu6050_setclocksource"
+			],
+			[
+				"PWR",
+				"PWR1_CLKSEL_LENGTH"
+			],
+			[
+				"PWR1",
+				"PWR1_CLKSEL_BIT"
+			],
+			[
+				"_write",
+				"_writedata"
+			],
+			[
+				"_read",
+				"_readdata"
+			],
+			[
+				"uint",
+				"uint8_t"
+			],
+			[
+				"CF",
+				"CFLAGS_MOD"
+			],
+			[
+				"MI",
+				"MICROPY_PY_TFT"
+			],
+			[
+				"_dat",
+				"_data14\tstatement"
+			],
+			[
+				"txt",
+				"txtsize\tstatement"
+			],
+			[
+				"di",
+				"distances\tstatement"
+			],
+			[
+				"dis",
+				"distindex\tstatement"
+			],
+			[
+				"range",
+				"rangepoint"
+			],
+			[
+				"aD",
+				"aDistance\tparam"
+			],
+			[
+				"in",
+				"interpolate"
+			],
+			[
+				"int",
+				"interp\tfunction"
+			],
+			[
+				"F",
+				"FONT_HEIGHT\tstatement"
+			],
+			[
+				"ter",
+				"terminalfont"
+			],
+			[
+				"print",
+				"printdistance"
+			],
+			[
+				"S",
+				"SONAR_DELAY\tstatement"
+			],
+			[
+				"d",
+				"distance_in_inches"
+			],
+			[
+				"TFT",
+				"TFTColor"
+			],
+			[
+				"_set",
+				"_setMADCTL\tfunction"
+			],
+			[
+				"TFTR",
+				"TFTRotations\tstatement"
+			],
+			[
+				"_w",
+				"_writedata\tfunction"
+			],
+			[
+				"c",
+				"c\tforflow"
+			],
+			[
+				"ST7735_C",
+				"ST7735_COLMOD\tstatement"
+			],
+			[
+				"ST7735_I",
+				"ST7735_INVOFF\tstatement"
+			],
+			[
+				"all",
+				"allgrades"
+			],
+			[
+				"pan",
+				"panel_layer"
+			],
+			[
+				"add",
+				"add_layer"
+			],
+			[
+				"grade",
+				"gradenum"
+			],
+			[
+				"check",
+				"checkteacher"
+			],
+			[
+				"setactive",
+				"setactiveteacher"
+			],
+			[
+				"sca",
+				"scale_x"
+			],
+			[
+				"scale",
+				"scale_x"
+			],
+			[
+				"DRAG",
+				"DRAGNOFIT"
+			],
+			[
+				"DRA",
+				"DRAGFIT"
+			],
+			[
+				"DR",
+				"DRAGFIT"
+			],
+			[
+				"B",
+				"BLACK"
+			],
+			[
+				"clas",
+				"classes"
+			],
+			[
+				"stro",
+				"stroke_weight"
+			],
+			[
+				"per",
+				"perday"
+			],
+			[
+				"cla",
+				"classes"
+			],
+			[
+				"addsu",
+				"addsubject"
+			],
+			[
+				"try",
+				"try\tTry/Except"
+			],
+			[
+				"gr",
+				"grades"
+			],
+			[
+				"ad",
+				"adjustpos"
+			],
+			[
+				"l",
+				"layer"
+			],
+			[
+				"touch_",
+				"touch_moved"
+			],
+			[
+				"active",
+				"activesubject"
+			],
+			[
+				"acti",
+				"activesubject"
+			],
+			[
+				"sub",
+				"subjects"
+			],
+			[
+				"teach",
+				"teachscale"
+			],
+			[
+				"touch",
+				"touch_ended"
+			],
+			[
+				"Pe",
+				"PeriodNames"
+			],
+			[
+				"gra",
+				"gradenum"
+			],
+			[
+				"title",
+				"titlesize"
+			],
+			[
+				"Book",
+				"Bookmarks"
+			],
+			[
+				"to",
+				"todo"
+			],
+			[
+				"sublime",
+				"sublime_plugin"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Ports/stm32/mpu6050.c",
+			"settings":
+			{
+				"buffer_size": 9678,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ports/stm32/oled.c",
+			"settings":
+			{
+				"buffer_size": 27118,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/gcarver/OneDrive/Projects/raspi/oled/clock.py",
+			"settings":
+			{
+				"buffer_size": 3677,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/gcarver/OneDrive/Projects/MicroPython/Lib/sevenseg.py",
+			"settings":
+			{
+				"buffer_size": 3319,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "notes.ida",
+			"settings":
+			{
+				"buffer_size": 1677,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/gcarver/OneDrive/Projects/raspi/oled/oled.py",
+			"settings":
+			{
+				"buffer_size": 8549,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/gcarver/OneDrive/Projects/raspi/sevenseg.py",
+			"settings":
+			{
+				"buffer_size": 3451,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/gcarver/OneDrive/Projects/raspi/notes.ida",
+			"settings":
+			{
+				"buffer_size": 2863,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"packag",
+				"Preferences: Browse Packages"
+			],
+			[
+				"",
+				"Snippet: Do While Loop"
+			]
+		],
+		"width": 460.0
+	},
+	"console":
+	{
+		"height": 171.0,
+		"history":
+		[
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"dir(sublime)",
+			"help(sublime)",
+			"hex(x & (~y))",
+			"hex(x & (~z))",
+			"hex",
+			"x & (~ z)",
+			"x & (not z)",
+			"z = 0x1000",
+			"y = 0x10",
+			"x = 0xFFFFFFFF",
+			"Eraser",
+			"Pencil",
+			"Pen",
+			"Pen, Pencil, Eraser = range(3)",
+			"range(3)",
+			"view.run_command()"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": false,
+		"show_minimap": false,
+		"show_open_files": true,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/gcarver/OneDrive/Projects/MicroPython",
+		"/C/Users/gcarver/OneDrive/Projects/MicroPython/Lib"
+	],
+	"file_history":
+	[
+		"/C/Users/gcarver/OneDrive/Projects/MicroPython/Lib/sevenseg.py",
+		"/C/Users/gcarver/OneDrive/Projects/raspi/sevenseg.py",
+		"/C/Users/gcarver/OneDrive/Projects/raspi/tm1637.py",
+		"/C/Users/gcarver/OneDrive/notes.ida",
+		"/H/lib/sevenseg.py",
+		"/C/Users/gcarver/OneDrive/Projects/MicroPython/Lib/tm1637.py",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/py/obj.h",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/ports/stm32/font_petme128_8x8.h",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/extmod/vfs.c",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/ports/stm32/ST7735.c",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/ports/stm32/i2c.c",
+		"/C/Users/gcarver/OneDrive/Projects/MicroPython/main.py",
+		"/C/Projects/raspi/tfttest.py",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/ports/stm32/Makefile",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/Ports/stm32/lcd.c",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/Ports/stm32/ST7735.h",
+		"/C/Users/gcarver/OneDrive/Projects/raspi/clock/clock.py",
+		"/C/Projects/Python/Clock/Clock.py",
+		"/C/Users/gcarver/OneDrive/Projects/raspi/notes.ida",
+		"/C/Users/gcarver/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Projects/raspi/oled/example2-oled96-rpi.py",
+		"/C/Projects/raspi/oled/lib_oled96.py",
+		"/C/Projects/raspi/wiringPi/gpio/gpio.c",
+		"/C/Projects/raspi/myglfw/myglfw.c",
+		"/C/Users/gcarver/OneDrive/Projects/raspi/oled/OLED.py",
+		"/C/Users/gcarver/Downloads/lib_oled96.py",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/ports/stm32/i2c.h",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/MicroPython.sublime-project",
+		"/C/Users/gcarv/OneDrive/Projects/raspi/notes.ida",
+		"/D/Projects/chip/notes.ida",
+		"/C/Users/gcarv/OneDrive/notes.ida",
+		"/D/Projects/IIC_OLED/0.96Inch/Adafruit_SSD1306/Adafruit_SSD1306.h",
+		"/D/Projects/IIC_OLED/0.96Inch/Adafruit_SSD1306/Adafruit_SSD1306.cpp",
+		"/D/Projects/IIC_OLED/0.96Inch/Adafruit_GFX/Adafruit_GFX.cpp",
+		"/C/Users/gcarv/OneDrive/Projects/MicroPython/Lib/OLED.py",
+		"/C/Users/gcarv/OneDrive/Projects/MicroPython/Lib/ST7735.py",
+		"/D/Raspi/CMakeCache.txt",
+		"/D/Projects/MyMicroPython/notes.ida",
+		"/D/Projects/raspi/spi/spi.h",
+		"/D/Projects/raspi/spi/spiapp.cpp",
+		"/D/Projects/raspi/spi/spi.cpp",
+		"/D/Projects/MyMicroPython/mpy-cross/README.md",
+		"/C/Users/gcarv/Desktop/drivers/README.md",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/ports/stm32/timer.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/Ports/stm32/pin.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/ports/stm32/dac.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/ports/stm32/extint.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/ports/stm32/can.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/ports/stm32/adc.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/ports/stm32/modpyb.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/MicroPython.sublime-project",
+		"/E/main.py",
+		"/E/lib/OLED.py",
+		"/E/lib/ST7735.py",
+		"/D/Projects/raspi/notes.ida",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/stmhal/ST7735.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/stmhal/pin.c",
+		"/D/Projects/MicroPython/Ports/stm32/timer.c",
+		"/D/Projects/MicroPython/py/obj.h",
+		"/D/Projects/MicroPython/ports/stm32/Makefile",
+		"/C/Users/gcarv/AppData/Roaming/Sublime Text 3/Packages/User/MyUtils.sublime-settings",
+		"/D/Projects/MicroPython/notes.ida",
+		"/D/Projects/raspi/nodes.ida",
+		"/E/bombs.py",
+		"/D/Raspi/spi/spi.h",
+		"/D/Raspi/spi/spi.cpp",
+		"/D/Projects/MicroPython/Ports/stm32/mpu6050.h",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/stmhal/moduselect.c",
+		"/C/Users/gcarv/AppData/Roaming/Sublime Text 3/Packages/FileHeader/Default (Windows).sublime-keymap",
+		"/D/Projects/MicroPython/ports/stm32/pin.c",
+		"/D/Projects/MicroPython/py/bc.c",
+		"/D/Projects/MicroPython/Ports/stm32/accel.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/stmhal/modpyb.c",
+		"/D/Projects/MicroPython/Ports/stm32/can.c",
+		"/D/Projects/MicroPython/Ports/stm32/modpyb.c",
+		"/D/Projects/MicroPython/Ports/stm32/Makefile",
+		"/D/Projects/MicroPython/drivers/display/lcd160cr.py",
+		"/D/Projects/MicroPython/ports/stm32/modules/lcd160cr.py",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/stmhal/lcd.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/stmhal/font_petme128_8x8.h",
+		"/D/Projects/MicroPython/py/mkrules.mk",
+		"/D/Projects/MicroPython/ports/stm32/modules/onewire.py",
+		"/D/Projects/MicroPython/ports/stm32/modules/lcd160cr_test.py",
+		"/D/Projects/MicroPython/ports/stm32/modules/ssd1306.py",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/stmhal/modnwwiznet5k.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/stmhal/can.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/stmhal/usb.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/py/objproperty.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/windows/proptest.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/stmhal/uart.c",
+		"/D/Projects/MicroPython/ports/cc3200/mods/pybpin.c",
+		"/D/Projects/MicroPython/Ports/stm32/pin.c",
+		"/D/Projects/MicroPython/py/objproperty.c",
+		"/C/Users/gcarv/OneDrive/Projects/micropython-1/py/obj.h",
+		"/D/Projects/MicroPython/Ports/stm32/modnwwiznet5k.c",
+		"/D/Projects/MicroPython/MicroPython.sublime-project",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/stmhal/mpu6050.h",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/stmhal/mpu6050.c",
+		"/C/Projects/raspi/Python/i2ctest.py",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/stmhal/qstrdefsport.h",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/stmhal/accel.c",
+		"/F/lib/mpu6050.py",
+		"/f/main.py",
+		"/c/users/gcarver/onedrive/projects/micropython-1/stmhal/can.c",
+		"/c/users/gcarver/onedrive/projects/micropython-1/unix/modffi.c",
+		"/c/users/gcarver/onedrive/projects/micropython-1/py/runtime.c",
+		"/c/users/gcarver/onedrive/projects/micropython-1/py/objtype.c",
+		"/c/users/gcarver/onedrive/projects/micropython-1/unix/help.c",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/py/runtime.h",
+		"/c/users/gcarver/onedrive/projects/micropython-1/py/objdict.c",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/py/map.c",
+		"/c/users/gcarver/onedrive/projects/micropython-1/cc3200/mods/modnetwork.c",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/stmhal/i2c.h",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/stmhal/hal/inc/stm32f4xx_hal_i2c.h",
+		"/c/users/gcarver/onedrive/projects/micropython-1/stmhal/build-PYBV10/genhdr/qstrdefs.preprocessed.h",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/windows/notes.ida",
+		"/f/gyreport.py",
+		"/c/users/gcarver/onedrive/projects/micropython-1/stmhal/hal/src/stm32f4xx_hal_i2c.c",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/stmhal/i2c.c",
+		"/f/lib/GY521.py",
+		"/c/users/gcarver/onedrive/projects/micropython-1/py/obj.h",
+		"/c/users/gcarver/onedrive/projects/micropython-1/py/compile.c",
+		"/c/users/gcarver/onedrive/projects/micropython-1/py/vm.c",
+		"/c/users/gcarver/onedrive/projects/micropython-1/py/runtime.h",
+		"/c/users/gcarver/onedrive/projects/micropython-1/stmhal/hal/inc/stm32f4xx_hal_rcc.h",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/stmhal/ST7735.c",
+		"/c/users/gcarver/onedrive/projects/micropython-1/stmhal/hal/inc/stm32f4xx_hal_i2c.h",
+		"/C/Users/gcarver/OneDrive/Projects/micropython-1/stmhal/modpyb.c"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 105.0,
+		"where_history":
+		[
+			"C:\\Users\\gcarver\\OneDrive\\Projects\\micropython-1, *.c, *.h",
+			"C:\\Users\\gcarv\\OneDrive\\Projects\\micropython-1, *.c, *.h",
+			"C:\\Users\\gcarv\\OneDrive\\Projects\\micropython-1\\ports\\stm32, *.c, *.h",
+			"D:\\Projects\\MicroPython,*.h",
+			"D:\\Projects\\MicroPython\\Ports\\stm32,*.h, *.c",
+			"C:\\Users\\gcarv\\OneDrive\\Projects\\micropython-1\\stmhal, *.c, *.h",
+			"D:\\Projects\\MicroPython\\Ports\\stm32,*.h, *.c",
+			"C:\\Users\\gcarv\\OneDrive\\Projects\\micropython-1\\stmhal, *.c, *.h",
+			"C:\\Users\\gcarv\\OneDrive\\Projects\\micropython-1\\stmhal",
+			"D:\\Projects\\MicroPython\\Ports\\stm32,*.h, *.c",
+			"D:\\Projects\\MicroPython,*.h, *.c",
+			"D:\\Projects\\MicroPython\\Ports\\stm32,*.h, *.c",
+			"C:\\Users\\gcarv\\OneDrive\\Projects\\micropython-1, *.c, *.h",
+			"C:\\Users\\gcarv\\OneDrive\\Projects\\micropython-1, *.h",
+			"C:\\Users\\gcarv\\OneDrive\\Projects\\micropython-1\\stmhal",
+			"C:\\Users\\gcarv\\OneDrive\\Projects\\micropython-1\\stmhal, *.h",
+			"C:\\Users\\gcarv\\OneDrive\\Projects\\micropython-1\\stmhal, *.c, *.h",
+			"D:\\Projects\\MicroPython\\Ports\\stm32,*.h, *.c",
+			"D:\\Projects\\MicroPython\\Ports\\stm32,*.h",
+			"D:\\Projects\\MicroPython\\Ports\\stm32",
+			"C:\\Users\\gcarv\\OneDrive\\Projects\\micropython-1\\stmhal",
+			"c:\\users\\gcarver\\onedrive\\projects\\micropython-1, *.c, *.h",
+			"c:\\users\\gcarver\\onedrive\\projects\\micropython-1\\stmhal, *.c, *.h",
+			"<open folders>, *.c, *.h",
+			"<open folders>, *.c",
+			"c:\\utils\\clean 2.4, *.icl",
+			"<open folders>, *.py",
+			"C:\\Users\\gcarver\\AppData\\Roaming\\Sublime Text 3\\Packages"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"CMD",
+			"somtoday",
+			"some",
+			"xrange",
+			"const\\((.*)\\)",
+			"cmd_mode",
+			"rom",
+			"MP_OBJ_NEW_SMALL_INT",
+			"\\(mp_obj_t\\)(&.*) ",
+			"mp_obj_NEW_QSTR",
+			"_init",
+			"mp_call_method_n_kw",
+			"{\n",
+			"dict",
+			"mp_call_function",
+			"memset",
+			"printf",
+			"st77",
+			"write",
+			"const\\((.*)\\)",
+			"x86_64-linux-gnu",
+			"x86_64",
+			"x86",
+			"gcarver",
+			"piprojects",
+			"    ",
+			"type_in",
+			"MP_OBJ_NEW",
+			"mp_call_method_n_kw",
+			"mp_map_lookup",
+			"ST77",
+			"font_petme",
+			"st7735",
+			"socket",
+			"_writedata",
+			"MP_DEFINE_CONST_DICT",
+			"mp_map_lookup",
+			"pyb_can_make_new",
+			"pyb_uart_make_new",
+			"pyb_tft_make_new",
+			"mp_obj_str_get_str",
+			"tft_id",
+			"pyb_tft_make_new",
+			"pyb_tft_size_obj",
+			"_mp_obj_property_t",
+			"proxy",
+			"MP_DEFINE_CONST_FUN_OBJ_KW",
+			"pyb_usb_vcp_recv_obj",
+			"mp_obj_property_t",
+			"MP_DEFINE_CONST_FUN_OBJ_KW",
+			"MP_DEFINE_CONST_FUN_OBJ_1",
+			"MP_DEFINE_CONST_FUN_OBJ_KW",
+			"MP_DEFINE_CONST_FUN_OBJ_1",
+			"property",
+			"obj_property",
+			"pyb_can_setfilter_obj",
+			"MP_DEFINE_CONST_FUN_OBJ_KW",
+			"MP_DEFINE_CONT_FUN_OBJ_KW",
+			"mp_hal_delay_ms",
+			"GPIO_clear_pin",
+			"pyb_tft_make_new",
+			"pyb_i2c_make_new",
+			"mp_obj_new",
+			"mp_map_lookup",
+			"\\.key",
+			"mp_obj_new_type",
+			"locals_dict",
+			"type_in",
+			"mp_load_global",
+			"call_py_func",
+			"rxcall",
+			"mp_call_function",
+			"HAL_StatusTypeDef",
+			"I2C_IsDeviceReady",
+			"HAL_I2C_ENABLE",
+			"I2C_IsDeviceReady",
+			"I2C1_CLK_ENABLE",
+			"pyb_i2c_obj",
+			"HAL_I2C_ERROR_AF",
+			"0x74",
+			"HAL_TIMEOUT",
+			"HAL_I2C_STATE_MEM",
+			"HAL_I2C_Mem_Write",
+			"i2c",
+			"print",
+			"sleepenabled",
+			"mp_obj_t",
+			"pyb_tft_on_obj",
+			"16bits",
+			"_readbit",
+			"HAL_I2C_Master_Transmit",
+			"HAL_I2C_",
+			"TFT",
+			"SPI_Init",
+			"include \"i2c\\.h\"",
+			"include \"isc\\.h\"",
+			"i2c",
+			"tft_id",
+			"make_new",
+			"src_MOD",
+			"st7735",
+			"tft",
+			"MP_QSTR_TFT",
+			"int16",
+			"gy521",
+			"clocksource",
+			"gcon",
+			"clocksource",
+			"INTCFG",
+			"CLOCK_DIV",
+			"DLPF_BW_",
+			"auxVDDIOLevel",
+			"read_byte",
+			"read_bytes",
+			"fullscalegyrorange",
+			"drawstring",
+			"_set",
+			"cmdData",
+			"self.rotate",
+			"ScreenSize",
+			"Sc",
+			"pgm_read_byte",
+			"pushcolo",
+			"ST7735_",
+			"madctl",
+			"MADCTL",
+			"madctl",
+			"MADCTL"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\1",
+			"MP_ROM_INT",
+			"MP_ROM_PTR(\\1) ",
+			"MP_ROM_QSTR",
+			"\\1",
+			"arm-linux-gnueabihf",
+			"pi",
+			"projects",
+			"\\t",
+			"MP_DEFINE_CONST_FUN_OBJ_1",
+			"mpu_loc",
+			"self.size",
+			"ST_",
+			"\\t",
+			"ignores_touches",
+			"    ",
+			"  ",
+			"headersize",
+			"  "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Ports/stm32/mpu6050.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9678,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1202.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "ports/stm32/oled.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 27118,
+						"regions":
+						{
+							"bookmarks":
+							{
+								"flags": 144,
+								"icon": "bookmark",
+								"regions":
+								[
+									[
+										9741,
+										9747
+									],
+									[
+										10997,
+										10997
+									],
+									[
+										24709,
+										24709
+									]
+								],
+								"scope": "bookmarks"
+							}
+						},
+						"selection":
+						[
+							[
+								9837,
+								9837
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 4554.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/gcarver/OneDrive/Projects/raspi/oled/clock.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3677,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3008,
+								3008
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1630.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/gcarver/OneDrive/Projects/MicroPython/Lib/sevenseg.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3319,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3163,
+								3163
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1760.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "notes.ida",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1677,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1559,
+								1559
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ida/ida.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "/C/Users/gcarver/OneDrive/Projects/raspi/oled/oled.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8549,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								719,
+								667
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1620.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Users/gcarver/OneDrive/Projects/raspi/sevenseg.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3451,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1,
+								1
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/C/Users/gcarver/OneDrive/Projects/raspi/notes.ida",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2863,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2744,
+								2744
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ida/ida.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 39.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.503175884579,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.haskell_sublime_load":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "",
+	"project": "MicroPython.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"i2c",
+				"micropython-1\\ports\\stm32\\i2c.h"
+			],
+			[
+				"i2c.h",
+				"micropython-1\\ports\\stm32\\i2c.h"
+			],
+			[
+				"i2c.c",
+				"micropython-1\\ports\\stm32\\i2c.c"
+			],
+			[
+				"spi.h",
+				"micropython-1\\stmhal\\spi.h"
+			],
+			[
+				"edit",
+				"Edit\\edit.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\gcarver\\AppData\\Roaming\\Sublime Text 3\\ST3.sublime-project"
+			]
+		],
+		"width": 443.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "MP_DEFINE",
+		"selected_items":
+		[
+			[
+				"MP_DEFINE",
+				"MP_DEFINE_CONST_DICT"
+			],
+			[
+				"mp_obj_new_int",
+				"mp_obj_new_int"
+			],
+			[
+				"mp_call",
+				"mp_call_function_n_kw"
+			],
+			[
+				"mp_map_loo",
+				"mp_map_lookup"
+			],
+			[
+				"mp_map_ele",
+				"_mp_map_elem_t"
+			],
+			[
+				"Test",
+				"Test3"
+			]
+		],
+		"width": 664.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"TM_CLASS": "TestClass"
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 222.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
