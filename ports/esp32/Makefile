@@ -1,3 +1,5 @@
+ESPIDF = $(HOME)/esp-idf
+
 include ../../py/mkenv.mk
 
 # qstr definitions (must come before including py.mk)
@@ -14,7 +16,7 @@ FROZEN_MPY_DIR = modules
 # include py core make definitions
 include $(TOP)/py/py.mk
 
-PORT ?= /dev/ttyUSB0
+PORT ?= /dev/ttyS3
 BAUD ?= 460800
 FLASH_MODE ?= dio
 FLASH_FREQ ?= 40m
@@ -152,6 +154,7 @@ SRC_C = \
 	machine_hw_spi.c \
 	machine_wdt.c \
 	mpthreadport.c \
+	ps2.c \
 	$(SRC_MOD)
 
 EXTMOD_SRC_C = $(addprefix extmod/,\
