@@ -42,3 +42,9 @@ user.props
 # Generated rst files
 ######################
 genrst/
+
+# Other
+######################
+*.ida
+*.sublime-project
+*.sublime-workspace

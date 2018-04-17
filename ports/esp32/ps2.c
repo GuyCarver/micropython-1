@@ -31,6 +31,7 @@
 #include "py/mpconfig.h"
 #include "py/mphal.h"
 #include "py/nlr.h"
+#include "py/runtime.h"
 #include "mphalport.h"
 #include "modmachine.h"
 
@@ -178,7 +179,7 @@ STATIC void _qdata( machine_ps2_obj_t *self ) {
 //Initialize the joystick.
 STATIC void _init( machine_ps2_obj_t *self ) {
 	//Read data, but probably not necessary, maybe just the delay is, but without these
-	// initialization may not succeeed.
+	// initialization may not succeed.
 	_qdata(self);
 	mp_hal_delay_us(100);
 	_qdata(self);
