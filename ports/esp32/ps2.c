@@ -133,10 +133,10 @@ STATIC void _sendrcv( machine_ps2_obj_t *self, const unsigned char *apData, unsi
 			_setpin(self->_cmd, snd & 1);
 			snd >>= 1;
 			_setpin(self->_clk, 0);				//Set self->_clk low.
-			mp_hal_delay_us(4);					//Delay must be at least 4 to work.
+			mp_hal_delay_us(5);					//Delay must be at least 5 to work.
 			value |= _getpin(self->_data) << j;
 			_setpin(self->_clk, 1);				//set self->_clk high.
-			mp_hal_delay_us(4);					//Delay must be at least 4 to work.
+			mp_hal_delay_us(5);					//Delay must be at least 5 to work.
 		}
 		self->_res[i] = value;					//Store the read value into result buffer.
 	}
@@ -201,6 +201,7 @@ STATIC void _init( machine_ps2_obj_t *self ) {
 	// a couple are needed but 6 is the minimum to be safe.
 	for ( uint32_t i = 0; i < 6; ++i) {
 		_qdata(self);
+		mp_hal_delay_us(100);
 	}
 }
 
@@ -225,7 +226,7 @@ STATIC mp_obj_t machine_ps2_inputname( mp_obj_t self_in, mp_obj_t arg ) {
 	}
 
 	mp_rom_map_elem_t elem = getinputname(index);
-	return elem.key;
+	return (mp_obj_t)(elem.key);
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_2(machine_ps2_inputname_obj, machine_ps2_inputname);
 
