@@ -33,7 +33,7 @@ Example usage::
 Constructors
 ------------
 
-.. class:: I2C(id=-1, \*, scl, sda, freq=400000)
+.. class:: I2C(id=-1, *, scl, sda, freq=400000)
 
    Construct and return a new I2C object using the following parameters:
 
@@ -52,7 +52,7 @@ Constructors
 General Methods
 ---------------
 
-.. method:: I2C.init(scl, sda, \*, freq=400000)
+.. method:: I2C.init(scl, sda, *, freq=400000)
 
   Initialise the I2C bus with the given arguments:
 
@@ -79,19 +79,17 @@ The following methods implement the primitive I2C master bus operations and can
 be combined to make any I2C transaction.  They are provided if you need more
 control over the bus, otherwise the standard methods (see below) can be used.
 
+These methods are available on software I2C only.
+
 .. method:: I2C.start()
 
    Generate a START condition on the bus (SDA transitions to low while SCL is high).
-
-   Availability: ESP8266.
 
 .. method:: I2C.stop()
 
    Generate a STOP condition on the bus (SDA transitions to high while SCL is high).
 
-   Availability: ESP8266.
-
-.. method:: I2C.readinto(buf, nack=True)
+.. method:: I2C.readinto(buf, nack=True, /)
 
    Reads bytes from the bus and stores them into *buf*.  The number of bytes
    read is the length of *buf*.  An ACK will be sent on the bus after
@@ -99,15 +97,11 @@ control over the bus, otherwise the standard methods (see below) can be used.
    is true then a NACK will be sent, otherwise an ACK will be sent (and in this
    case the slave assumes more bytes are going to be read in a later call).
 
-   Availability: ESP8266.
-
 .. method:: I2C.write(buf)
 
    Write the bytes from *buf* to the bus.  Checks that an ACK is received
    after each byte and stops transmitting the remaining bytes if a NACK is
    received.  The function returns the number of ACKs that were received.
-
-   Availability: ESP8266.
 
 Standard bus operations
 -----------------------
@@ -115,13 +109,13 @@ Standard bus operations
 The following methods implement the standard I2C master read and write
 operations that target a given slave device.
 
-.. method:: I2C.readfrom(addr, nbytes, stop=True)
+.. method:: I2C.readfrom(addr, nbytes, stop=True, /)
 
    Read *nbytes* from the slave specified by *addr*.
    If *stop* is true then a STOP condition is generated at the end of the transfer.
    Returns a `bytes` object with the data read.
 
-.. method:: I2C.readfrom_into(addr, buf, stop=True)
+.. method:: I2C.readfrom_into(addr, buf, stop=True, /)
 
    Read into *buf* from the slave specified by *addr*.
    The number of bytes read will be the length of *buf*.
@@ -129,13 +123,27 @@ operations that target a given slave device.
 
    The method returns ``None``.
 
-.. method:: I2C.writeto(addr, buf, stop=True)
+.. method:: I2C.writeto(addr, buf, stop=True, /)
 
    Write the bytes from *buf* to the slave specified by *addr*.  If a
    NACK is received following the write of a byte from *buf* then the
    remaining bytes are not sent.  If *stop* is true then a STOP condition is
    generated at the end of the transfer, even if a NACK is received.
    The function returns the number of ACKs that were received.
+
+.. method:: I2C.writevto(addr, vector, stop=True, /)
+
+   Write the bytes contained in *vector* to the slave specified by *addr*.
+   *vector* should be a tuple or list of objects with the buffer protocol.
+   The *addr* is sent once and then the bytes from each object in *vector*
+   are written out sequentially.  The objects in *vector* may be zero bytes
+   in length in which case they don't contribute to the output.
+
+   If a NACK is received following the write of a byte from one of the
+   objects in *vector* then the remaining bytes, and any remaining objects,
+   are not sent.  If *stop* is true then a STOP condition is generated at
+   the end of the transfer, even if a NACK is received.  The function
+   returns the number of ACKs that were received.
 
 Memory operations
 -----------------
@@ -145,14 +153,14 @@ from and written to.  In this case there are two addresses associated with an
 I2C transaction: the slave address and the memory address.  The following
 methods are convenience functions to communicate with such devices.
 
-.. method:: I2C.readfrom_mem(addr, memaddr, nbytes, \*, addrsize=8)
+.. method:: I2C.readfrom_mem(addr, memaddr, nbytes, *, addrsize=8)
 
    Read *nbytes* from the slave specified by *addr* starting from the memory
    address specified by *memaddr*.
    The argument *addrsize* specifies the address size in bits.
    Returns a `bytes` object with the data read.
 
-.. method:: I2C.readfrom_mem_into(addr, memaddr, buf, \*, addrsize=8)
+.. method:: I2C.readfrom_mem_into(addr, memaddr, buf, *, addrsize=8)
 
    Read into *buf* from the slave specified by *addr* starting from the
    memory address specified by *memaddr*.  The number of bytes read is the
@@ -162,7 +170,7 @@ methods are convenience functions to communicate with such devices.
 
    The method returns ``None``.
 
-.. method:: I2C.writeto_mem(addr, memaddr, buf, \*, addrsize=8)
+.. method:: I2C.writeto_mem(addr, memaddr, buf, *, addrsize=8)
 
    Write *buf* to the slave specified by *addr* starting from the
    memory address specified by *memaddr*.

@@ -49,7 +49,7 @@ Class Methods
 Methods
 -------
 
-.. method:: CAN.init(mode, extframe=False, prescaler=100, \*, sjw=1, bs1=6, bs2=8, auto_restart=False)
+.. method:: CAN.init(mode, extframe=False, prescaler=100, *, sjw=1, bs1=6, bs2=8, auto_restart=False)
 
    Initialise the CAN bus with the given parameters:
 
@@ -92,7 +92,7 @@ Methods
 
    Force a software restart of the CAN controller without resetting its
    configuration.
-   
+
    If the controller enters the bus-off state then it will no longer participate
    in bus activity.  If the controller is not configured to automatically restart
    (see :meth:`~CAN.init()`) then this method can be used to trigger a restart,
@@ -135,7 +135,7 @@ Methods
    - number of pending RX messages on fifo 0
    - number of pending RX messages on fifo 1
 
-.. method:: CAN.setfilter(bank, mode, fifo, params, \*, rtr)
+.. method:: CAN.setfilter(bank, mode, fifo, params, *, rtr)
 
    Configure a filter bank:
 
@@ -187,7 +187,7 @@ Methods
 
    Return ``True`` if any message waiting on the FIFO, else ``False``.
 
-.. method:: CAN.recv(fifo, list=None, \*, timeout=5000)
+.. method:: CAN.recv(fifo, list=None, *, timeout=5000)
 
    Receive data on the bus:
 
@@ -220,7 +220,7 @@ Methods
         # No heap memory is allocated in the following call
         can.recv(0, lst)
 
-.. method:: CAN.send(data, id, \*, timeout=0, rtr=False)
+.. method:: CAN.send(data, id, *, timeout=0, rtr=False)
 
    Send a message on the bus:
 

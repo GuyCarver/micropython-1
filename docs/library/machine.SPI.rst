@@ -29,7 +29,7 @@ Constructors
 Methods
 -------
 
-.. method:: SPI.init(baudrate=1000000, \*, polarity=0, phase=0, bits=8, firstbit=SPI.MSB, sck=None, mosi=None, miso=None, pins=(SCK, MOSI, MISO))
+.. method:: SPI.init(baudrate=1000000, *, polarity=0, phase=0, bits=8, firstbit=SPI.MSB, sck=None, mosi=None, miso=None, pins=(SCK, MOSI, MISO))
 
    Initialise the SPI bus with the given parameters:
 
@@ -46,6 +46,10 @@ Methods
        (``id`` = -1).
      - ``pins`` - WiPy port doesn't ``sck``, ``mosi``, ``miso`` arguments, and instead allows to
        specify them as a tuple of ``pins`` parameter.
+
+   In the case of hardware SPI the actual clock frequency may be lower than the
+   requested baudrate. This is dependant on the platform hardware. The actual
+   rate may be determined by printing the SPI object.
 
 .. method:: SPI.deinit()
 

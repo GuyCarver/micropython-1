@@ -50,7 +50,7 @@ bool mp_repl_continue_with_input(const char *input) {
 
     // check if input starts with a certain keyword
     bool starts_with_compound_keyword =
-           input[0] == '@'
+        input[0] == '@'
         || str_startswith_word(input, "if")
         || str_startswith_word(input, "while")
         || str_startswith_word(input, "for")
@@ -61,7 +61,7 @@ bool mp_repl_continue_with_input(const char *input) {
         #if MICROPY_PY_ASYNC_AWAIT
         || str_startswith_word(input, "async")
         #endif
-        ;
+    ;
 
     // check for unmatched open bracket, quote or escape quote
     #define Q_NONE (0)
@@ -95,19 +95,37 @@ bool mp_repl_continue_with_input(const char *input) {
             }
         } else if (in_quote == Q_NONE) {
             switch (*i) {
-                case '(': n_paren += 1; break;
-                case ')': n_paren -= 1; break;
-                case '[': n_brack += 1; break;
-                case ']': n_brack -= 1; break;
-                case '{': n_brace += 1; break;
-                case '}': n_brace -= 1; break;
-                default: break;
+                case '(':
+                    n_paren += 1;
+                    break;
+                case ')':
+                    n_paren -= 1;
+                    break;
+                case '[':
+                    n_brack += 1;
+                    break;
+                case ']':
+                    n_brack -= 1;
+                    break;
+                case '{':
+                    n_brace += 1;
+                    break;
+                case '}':
+                    n_brace -= 1;
+                    break;
+                default:
+                    break;
             }
         }
     }
 
-    // continue if unmatched brackets or quotes
-    if (n_paren > 0 || n_brack > 0 || n_brace > 0 || in_quote == Q_3_SINGLE || in_quote == Q_3_DOUBLE) {
+    // continue if unmatched 3-quotes
+    if (in_quote == Q_3_SINGLE || in_quote == Q_3_DOUBLE) {
+        return true;
+    }
+
+    // continue if unmatched brackets, but only if not in a 1-quote
+    if ((n_paren > 0 || n_brack > 0 || n_brace > 0) && in_quote == Q_NONE) {
         return true;
     }
 
@@ -154,11 +172,11 @@ size_t mp_repl_autocomplete(const char *str, size_t len, const mp_print_t *print
         if (str < top) {
             // a complete word, lookup in current object
             qstr q = qstr_find_strn(s_start, s_len);
-            if (q == MP_QSTR_NULL) {
+            if (q == MP_QSTRnull) {
                 // lookup will fail
                 return 0;
             }
-            mp_load_method_maybe(obj, q, dest);
+            mp_load_method_protected(obj, q, dest, true);
             obj = dest[0]; // attribute, method, or MP_OBJ_NULL if nothing found
 
             if (obj == MP_OBJ_NULL) {
@@ -175,12 +193,12 @@ size_t mp_repl_autocomplete(const char *str, size_t len, const mp_print_t *print
             // look for matches
             const char *match_str = NULL;
             size_t match_len = 0;
-            qstr q_first = 0, q_last;
-            for (qstr q = 1; q < nqstr; ++q) {
+            qstr q_first = 0, q_last = 0;
+            for (qstr q = MP_QSTR_ + 1; q < nqstr; ++q) {
                 size_t d_len;
-                const char *d_str = (const char*)qstr_data(q, &d_len);
+                const char *d_str = (const char *)qstr_data(q, &d_len);
                 if (s_len <= d_len && strncmp(s_start, d_str, s_len) == 0) {
-                    mp_load_method_maybe(obj, q, dest);
+                    mp_load_method_protected(obj, q, dest, true);
                     if (dest[0] != MP_OBJ_NULL) {
                         if (match_str == NULL) {
                             match_str = d_str;
@@ -232,9 +250,9 @@ size_t mp_repl_autocomplete(const char *str, size_t len, const mp_print_t *print
             int line_len = MAX_LINE_LEN; // force a newline for first word
             for (qstr q = q_first; q <= q_last; ++q) {
                 size_t d_len;
-                const char *d_str = (const char*)qstr_data(q, &d_len);
+                const char *d_str = (const char *)qstr_data(q, &d_len);
                 if (s_len <= d_len && strncmp(s_start, d_str, s_len) == 0) {
-                    mp_load_method_maybe(obj, q, dest);
+                    mp_load_method_protected(obj, q, dest, true);
                     if (dest[0] != MP_OBJ_NULL) {
                         int gap = (line_len + WORD_SLOT_LEN - 1) / WORD_SLOT_LEN * WORD_SLOT_LEN - line_len;
                         if (gap < 2) {
