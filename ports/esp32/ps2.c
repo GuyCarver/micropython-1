@@ -46,38 +46,38 @@ mp_rom_map_elem_t getinputname( unsigned int aIndex );
 
 //Bit 0 indicates button on/off state.  Bit 1 indicates change state between current and previous on/off value.
 typedef enum {
-	_UP = 0,
-	_DOWN = 1, 									//Button is down.
-	_RELEASED = 2, 								//Indicate button was just released.
-	_PRESSED = 3, 								//Indicate button was just pressed.
+	_UP,
+	_DOWN,										//Button is down.
+	_RELEASED,									//Indicate button was just released.
+	_PRESSED,									//Indicate button was just pressed.
 } ps2_button_states;
 
 //_buttons array indexes
 typedef enum {
-	_SELECT = 0,
-	_L_HAT = 1,
-	_R_HAT = 2,
-	_START = 3,
-	_DPAD_U = 4,
-	_DPAD_R = 5,
-	_DPAD_D = 6,
-	_DPAD_L = 7,
-	_L_TRIGGER = 8,
-	_R_TRIGGER = 9,
-	_L_SHOULDER = 10,
-	_R_SHOULDER = 11,
-	_TRIANGLE   = 12,
-	_CIRCLE = 13,
-	_CROSS = 14,
-	_SQUARE = 15
+	_SELECT,
+	_L_HAT,
+	_R_HAT,
+	_START,
+	_DPAD_U,
+	_DPAD_R,
+	_DPAD_D,
+	_DPAD_L,
+	_L_TRIGGER,
+	_R_TRIGGER,
+	_L_SHOULDER,
+	_R_SHOULDER,
+	_TRIANGLE,
+	_CIRCLE,
+	_CROSS,
+	_SQUARE
 } ps2_buttons;
 
-//_joys array indexes.
+//_joys array indexes. Note these need to be anded with 0xF as they start at 16 to start at the end of the buttons enums.
 typedef enum {
 	_RX = 0x10,
-	_RY = 0x11,
-	_LX = 0x12,
-	_LY = 0x13
+	_RY,
+	_LX,
+	_LY
 } ps2_axis;
 
 unsigned char cmd_qmode[] = {1,0x41,0,0,0};	   //Add the below bytes in to read analog (analog button mode needs to be set)
@@ -233,6 +233,7 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_2(machine_ps2_inputname_obj, machine_ps2_inputnam
 //Get joystick value given an index.
 STATIC mp_obj_t machine_ps2_joy( mp_obj_t self_in, mp_obj_t arg ) {
 	machine_ps2_obj_t *self = self_in;
+	//If the input values are _LX etc, they have an additional bit set to start them at index 16.  Strip that off.
 	int index = mp_obj_get_int(arg) & 0x03;
 	return MP_OBJ_NEW_SMALL_INT(self->_joys[index]);
 }

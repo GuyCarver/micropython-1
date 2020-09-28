@@ -191,9 +191,9 @@ STATIC mp_obj_t machine_uart_make_new(const mp_obj_type_t *type, size_t n_args, 
 
     // Attempts to use UART0 from Python has resulted in all sorts of fun errors.
     // FIXME: UART0 is disabled for now.
-    if (uart_num == UART_NUM_0) {
-        nlr_raise(mp_obj_new_exception_msg_varg(&mp_type_ValueError, "UART(%d) is disabled (dedicated to REPL)", uart_num));
-    }
+//    if (uart_num == UART_NUM_0) {
+//        nlr_raise(mp_obj_new_exception_msg_varg(&mp_type_ValueError, "UART(%d) is disabled (dedicated to REPL)", uart_num));
+//    }
 
      // Defaults
     uart_config_t uartcfg = {
@@ -219,8 +219,8 @@ STATIC mp_obj_t machine_uart_make_new(const mp_obj_type_t *type, size_t n_args, 
 
     switch (uart_num) {
         case UART_NUM_0:
-            self->rx = UART_PIN_NO_CHANGE; // GPIO 3
-            self->tx = UART_PIN_NO_CHANGE; // GPIO 1
+            self->rx = 12; //UART_PIN_NO_CHANGE; // GPIO 3
+            self->tx = 14; //UART_PIN_NO_CHANGE; // GPIO 1
             break;
         case UART_NUM_1:
             self->rx = 9;

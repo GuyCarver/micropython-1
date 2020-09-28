@@ -27,13 +27,13 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //----------------------------------------------------------------------
 
+#include <windows.h>
+#include <XInput.h>
 #include <string.h>
 #include "py/obj.h"
-//#include "py/mpconfig.h"
-//#include "py/mphal.h"
 #include "py/nlr.h"
-//#include "mphalport.h"
-//#include "modmachine.h"
+
+//This module emulates the PS2 controller using the Xbox 360 controller and XInput.
 
 //NOTE: A number of delays and other seemingly superfluous calls may not be necessary of may be too long.
 // I didn't test the tweaking of these values too much as I was in a hurry.
@@ -80,6 +80,28 @@ typedef enum {
 	_LY = 0x13
 } ps2_axis;
 
+#define _L_TRIGGER_X 0x0400
+#define _R_TRIGGER_X 0x0800
+
+unsigned int _remap[16] = {
+	XINPUT_GAMEPAD_BACK,
+	XINPUT_GAMEPAD_LEFT_THUMB,
+	XINPUT_GAMEPAD_LEFT_THUMB,
+	XINPUT_GAMEPAD_START,
+	XINPUT_GAMEPAD_DPAD_UP,
+	XINPUT_GAMEPAD_DPAD_RIGHT,
+	XINPUT_GAMEPAD_DPAD_DOWN,
+	XINPUT_GAMEPAD_DPAD_LEFT,
+	_L_TRIGGER_X,
+	_R_TRIGGER_X,
+	XINPUT_GAMEPAD_LEFT_SHOULDER,
+	XINPUT_GAMEPAD_RIGHT_SHOULDER,
+	XINPUT_GAMEPAD_Y,
+	XINPUT_GAMEPAD_B,
+	XINPUT_GAMEPAD_A,
+	XINPUT_GAMEPAD_X
+};
+
 unsigned char cmd_qmode[] = {1,0x41,0,0,0};	   //Add the below bytes in to read analog (analog button mode needs to be set)
 unsigned char cmd_qdata[] = {1,0x42,0,0,0,0,0,0,0}; //,0,0,0,0,0,0,0,0,0,0,0,0,0)
 unsigned char cmd_enter_config[] = {1,0x43,0,1,0};
@@ -92,6 +114,9 @@ unsigned char cmd_set_mode[] = {1,0x44,0,1,3,0,0,0,0}; //1 = analog stick mode, 
 
 typedef struct _machine_ps2_obj_t {
 	mp_obj_base_t base;
+
+	XINPUT_STATE _controllerState;
+	int _controllerNum;
 
 	mp_obj_t _cmd;								//Command pin.
 	mp_obj_t _data;								//Data pin.
@@ -106,6 +131,56 @@ typedef struct _machine_ps2_obj_t {
 	unsigned char _res[sizeof(cmd_qdata)];		//Buffer for reading data. (Must be 22 if qdata is larger and we are reading analog button data.
 
 } machine_ps2_obj_t;
+
+STATIC void _qdata( machine_ps2_obj_t *self ) {
+
+	memset(&(self->_controllerState), 0, sizeof(self->_controllerState));
+
+	DWORD result = XInputGetState(self->_controllerNum, &(self->_controllerState));
+
+	if (result == ERROR_SUCCESS) {
+		if (self->_controllerState.Gamepad.bLeftTrigger > 10) {
+			self->_controllerState.Gamepad.wButtons |= _L_TRIGGER_X;
+		}
+		if (self->_controllerState.Gamepad.bRightTrigger > 10) {
+			self->_controllerState.Gamepad.wButtons |= _R_TRIGGER_X;
+		}
+
+		for ( uint32_t i = 0; i < 16; ++i) {
+			unsigned int b = self->_controllerState.Gamepad.wButtons & _remap[i];
+			unsigned char bv = b ? 1 : 0;
+			if ((self->_prevbuttons & _remap[i]) != b) {
+				bv |= 2;
+			}
+			self->_buttons[i] = bv;
+
+			//If value not _UP and we have a callback function, then call it.
+			if (bv && (self->_callback != mp_const_none)) {
+				mp_call_function_2(self->_callback, MP_OBJ_NEW_SMALL_INT(i), MP_OBJ_NEW_SMALL_INT(bv));
+			}
+		}
+
+		self->_prevbuttons = self->_controllerState.Gamepad.wButtons;
+
+		int v = self->_controllerState.Gamepad.sThumbLX;
+		self->_joys[_LX & 0x03] = v >> 8;
+		v = self->_controllerState.Gamepad.sThumbLY;
+		self->_joys[_LY & 0x03] = v >> 8;
+		v = self->_controllerState.Gamepad.sThumbRX;
+		self->_joys[_RX & 0x03] = v >> 8;
+		v = self->_controllerState.Gamepad.sThumbRY;
+		self->_joys[_RY & 0x03] = v >> 8;
+	}
+}
+
+//Get button value given an index.
+STATIC mp_obj_t machine_ps2_update( mp_obj_t self_in ) {
+	machine_ps2_obj_t *self = self_in;
+	_qdata(self);
+
+	return mp_const_none;
+}
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(machine_ps2_update_obj, machine_ps2_update);
 
 //Get button value given an index.
 STATIC mp_obj_t machine_ps2_button( mp_obj_t self_in, mp_obj_t arg ) {
@@ -137,7 +212,7 @@ STATIC mp_obj_t machine_ps2_inputname( mp_obj_t self_in, mp_obj_t arg ) {
 	}
 
 	mp_rom_map_elem_t elem = getinputname(index);
-	return elem.key;
+	return (mp_obj_t)(elem.key);
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_2(machine_ps2_inputname_obj, machine_ps2_inputname);
 
@@ -169,6 +244,14 @@ STATIC void machine_ps2_print( const mp_print_t *print, mp_obj_t self_in, mp_pri
 //	machine_pin_type.print(print, self->_att, kind);
 }
 
+STATIC void _init( machine_ps2_obj_t *self ) {
+	//TODO: Do any setup.
+
+	for ( uint32_t i = 0; i < 6; ++i) {
+		_qdata(self);
+	}
+}
+
 //Create a new PS2 object given the pin #s and optional callback function.
 STATIC mp_obj_t machine_ps2_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args) {
 	if (n_args < 4) {
@@ -179,6 +262,7 @@ STATIC mp_obj_t machine_ps2_make_new(const mp_obj_type_t *type, size_t n_args, s
 	memset(ps2->_buttons, 0, sizeof(ps2->_buttons));
 	memset(ps2->_joys, 0, sizeof(ps2->_joys));
 	ps2->_prevbuttons = 0xFFFF;
+	ps2->_controllerNum = 0;
 
 	ps2->_cmd = args[0];
 	ps2->_data = args[1];
@@ -187,10 +271,13 @@ STATIC mp_obj_t machine_ps2_make_new(const mp_obj_type_t *type, size_t n_args, s
 
 	ps2->_callback = mp_const_none;
 
+	_init(ps2);
+
 	if (n_args > 4) {
 		//Set up the callback.
 		ps2->_callback = args[4];
 	}
+
 
 	return MP_OBJ_FROM_PTR(ps2);
 }
@@ -224,6 +311,7 @@ STATIC const mp_rom_map_elem_t machine_ps2_locals_dict_table[] = {
 	//Instance methods.
 	{ MP_ROM_QSTR(MP_QSTR_button), MP_ROM_PTR(&machine_ps2_button_obj) },
 	{ MP_ROM_QSTR(MP_QSTR_joy), MP_ROM_PTR(&machine_ps2_joy_obj) },
+	{ MP_ROM_QSTR(MP_QSTR_update), MP_ROM_PTR(&machine_ps2_update_obj) },
 	{ MP_ROM_QSTR(MP_QSTR_inputname), MP_ROM_PTR(&machine_ps2_inputname_obj) },
 	{ MP_ROM_QSTR(MP_QSTR_callback), MP_ROM_PTR(&machine_ps2_callback_obj) },
 };
