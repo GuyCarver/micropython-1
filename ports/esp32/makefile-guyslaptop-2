@@ -1,0 +1,5 @@
+
+ESPIDF = $(HOME)/esp/esp-idf
+
+include Makefile
+
